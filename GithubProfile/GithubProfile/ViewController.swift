@@ -12,7 +12,18 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        let router = Router(profileName: "gabrielcontee", context: .repositories)
+        Requester().execute(router: router) { (result: Result<[Repository], Error>) in
+            switch result {
+            case .success(let teste):
+                print(teste)
+                break
+            case .failure(let error):
+                print(error.localizedDescription)
+                break
+            }
+        }
     }
 
 
