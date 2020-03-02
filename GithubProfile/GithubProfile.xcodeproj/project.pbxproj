@@ -49,8 +49,6 @@
 		3158C767240C2B7500FED90E /* GithubProfileTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GithubProfileTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3158C76B240C2B7500FED90E /* GithubPopulationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubPopulationTests.swift; sourceTree = "<group>"; };
 		3158C76D240C2B7500FED90E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3158C776240C2B7500FED90E /* GithubProfileUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubProfileUITests.swift; sourceTree = "<group>"; };
-		3158C778240C2B7500FED90E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3158C785240C2E6800FED90E /* Requester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requester.swift; sourceTree = "<group>"; };
 		3158C787240C2EB000FED90E /* RequestRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestRouter.swift; sourceTree = "<group>"; };
 		3158C78C240C37B900FED90E /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
@@ -91,7 +89,6 @@
 			children = (
 				3158C753240C2B7200FED90E /* GithubProfile */,
 				3158C76A240C2B7500FED90E /* GithubProfileTests */,
-				3158C775240C2B7500FED90E /* GithubProfileUITests */,
 				3158C752240C2B7200FED90E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -130,15 +127,6 @@
 				3158C76D240C2B7500FED90E /* Info.plist */,
 			);
 			path = GithubProfileTests;
-			sourceTree = "<group>";
-		};
-		3158C775240C2B7500FED90E /* GithubProfileUITests */ = {
-			isa = PBXGroup;
-			children = (
-				3158C776240C2B7500FED90E /* GithubProfileUITests.swift */,
-				3158C778240C2B7500FED90E /* Info.plist */,
-			);
-			path = GithubProfileUITests;
 			sourceTree = "<group>";
 		};
 		3158C784240C2E4200FED90E /* Network */ = {
