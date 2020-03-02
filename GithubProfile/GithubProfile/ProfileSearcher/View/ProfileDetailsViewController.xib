@@ -11,6 +11,7 @@
             <connections>
                 <outlet property="profileImageView" destination="pw6-09-UkC" id="43f-zb-Vf2"/>
                 <outlet property="profileNameLabel" destination="dIr-wR-swk" id="EkE-yg-vze"/>
+                <outlet property="projectsTableView" destination="Dza-Cm-bmG" id="JWU-rl-uAY"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -45,12 +46,20 @@
                         <constraint firstItem="dIr-wR-swk" firstAttribute="top" secondItem="pw6-09-UkC" secondAttribute="bottom" constant="8" id="ze7-cC-CLP"/>
                     </constraints>
                 </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Dza-Cm-bmG">
+                    <rect key="frame" x="0.0" y="173" width="375" height="494"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="NXM-5I-jsx" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="0M1-pF-RxC"/>
                 <constraint firstItem="NXM-5I-jsx" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="E9L-T8-ewH"/>
                 <constraint firstItem="NXM-5I-jsx" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.25937" id="KVp-eN-qex"/>
+                <constraint firstItem="Dza-Cm-bmG" firstAttribute="top" secondItem="NXM-5I-jsx" secondAttribute="bottom" id="Ojq-1h-1t4"/>
+                <constraint firstItem="Dza-Cm-bmG" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="gsX-7Q-bCv"/>
+                <constraint firstItem="Dza-Cm-bmG" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="lwM-hi-bAL"/>
+                <constraint firstItem="Dza-Cm-bmG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="nYb-lx-tec"/>
                 <constraint firstItem="NXM-5I-jsx" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="rYx-a0-e1K"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

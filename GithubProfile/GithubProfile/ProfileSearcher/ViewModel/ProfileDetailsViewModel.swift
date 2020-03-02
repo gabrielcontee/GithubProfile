@@ -14,7 +14,7 @@ protocol ProfileLoaderProtocol: class {
 
 final class ProfileDetailsViewModel: NSObject {
     
-    private var repositories: [Repository]
+    private var projects: [Repository]
     private(set) var profileName: String
     
     weak var loadDelegate: ProfileLoaderProtocol?
@@ -22,12 +22,12 @@ final class ProfileDetailsViewModel: NSObject {
     // MARK: - Initialization functions
     
     init(profileName: String, repositories: [Repository]) {
-        self.repositories = repositories
+        self.projects = repositories
         self.profileName = profileName
     }
     
     func fetchProfileImage() {
-        guard let avatarUrl = self.repositories.first(where: {$0.avatarUrl != nil})?.avatarUrl, let url = URL(string: avatarUrl) else {
+        guard let avatarUrl = self.projects.first(where: {$0.avatarUrl != nil})?.avatarUrl, let url = URL(string: avatarUrl) else {
             return
         }
         getData(from: url) { data, response, error in
@@ -43,6 +43,18 @@ final class ProfileDetailsViewModel: NSObject {
     }
     
     // MARK: - Table population functions
+    
+    func numberOfProjects() -> Int {
+        return projects.count
+    }
+    
+    func project(for index: Int) -> (name: String, language: String) {
+        guard projects.count > index else {
+            return ("Error", "Error")
+        }
+        let repoForIndex = projects[index]
+        return (repoForIndex.name ?? "No name found", repoForIndex.language ?? "No language specified")
+    }
     
 }
 

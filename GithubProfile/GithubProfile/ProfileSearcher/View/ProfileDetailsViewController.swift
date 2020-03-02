@@ -10,12 +10,21 @@ import UIKit
 
 class ProfileDetailsViewController: UIViewController {
     
+    fileprivate let projectCellId = "projectCell"
+    
     @IBOutlet weak var profileImageView: UIImageView!{
         didSet{
             profileImageView.round()
         }
     }
     @IBOutlet weak var profileNameLabel: UILabel!
+    
+    @IBOutlet weak var projectsTableView: UITableView!{
+        didSet{
+            projectsTableView.register(UITableViewCell.self, forCellReuseIdentifier: projectCellId)
+            projectsTableView.dataSource = self
+        }
+    }
     
     weak var coordinator: MainCoordinator?
     
@@ -35,6 +44,28 @@ class ProfileDetailsViewController: UIViewController {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+extension ProfileDetailsViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.numberOfProjects()
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell = tableView.dequeueReusableCell(withIdentifier: projectCellId, for: indexPath) as UITableViewCell
+        if cell.detailTextLabel == nil {
+            cell = UITableViewCell(style: .subtitle, reuseIdentifier: projectCellId)
+        }
+        cell.backgroundColor = .white
+        let projectInfo = viewModel.project(for: indexPath.row)
+        cell.textLabel?.text = projectInfo.name
+        cell.detailTextLabel?.text = projectInfo.language
+        cell.textLabel?.textColor = .black
+        cell.detailTextLabel?.textColor = .black
+
+        return cell
     }
 }
 
