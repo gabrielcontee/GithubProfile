@@ -9,7 +9,7 @@
 import Foundation
 
 protocol RequestExecuter {
-    func execute<T: Codable>(router: Router, completion: @escaping (Result<T, Error>) -> ())
+    func execute<T: Decodable>(router: Router, completion: @escaping (Result<T, Error>) -> ())
 }
 
 final class Requester: RequestExecuter {
