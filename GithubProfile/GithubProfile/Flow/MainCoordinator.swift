@@ -23,12 +23,24 @@ class MainCoordinator: Coordinator{
     }
     
     func start() {
-        self.navigationController.navigationBar.barTintColor = Colors.navBarColor
-        self.navigationController.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.darkGray]
-        let searchProfileVC = SearchProfileViewController()
+        setLightGrayNavBar()
+        let viewModel = SearchProfileViewModel(apiClient: Requester())
+        let searchProfileVC = SearchProfileViewController(with: viewModel)
         searchProfileVC.coordinator = self
         searchProfileVC.title = "GitHub Viewer"
         navigationController.pushViewController(searchProfileVC, animated: false)
+    }
+    
+    func goToProfileDetails(profileName: String, repositories: [Repository]) {
+        let viewModel = ProfileDetailsViewModel(profileName: profileName, repositories: repositories)
+        let profileDetailsVC = ProfileDetailsViewController(with: viewModel)
+        profileDetailsVC.coordinator = self
+        navigationController.pushViewController(profileDetailsVC, animated: true)
+    }
+    
+    private func setLightGrayNavBar() {
+        self.navigationController.navigationBar.barTintColor = Colors.navBarColor
+        self.navigationController.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.darkGray]
     }
     
 }
