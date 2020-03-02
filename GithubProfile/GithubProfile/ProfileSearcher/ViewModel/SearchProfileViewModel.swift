@@ -29,7 +29,7 @@ final class SearchProfileViewModel: NSObject {
         
         let repoRouter = Router(profileName: name, context: .repositories)
         
-        apiClient.execute(router: repoRouter) { [unowned self] (result: Result<[Repository], Error>) in
+        apiClient.execute(router: repoRouter) { [unowned self] (result: Result<[Project], Error>) in
             switch result {
             case .success(let repositories):
                 self.loadingDelegate?.alreadyLoaded(repositories)

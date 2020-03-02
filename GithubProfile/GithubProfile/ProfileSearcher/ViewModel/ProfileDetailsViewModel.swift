@@ -14,14 +14,14 @@ protocol ProfileLoaderProtocol: class {
 
 final class ProfileDetailsViewModel: NSObject {
     
-    private var projects: [Repository]
+    private var projects: [Project]
     private(set) var profileName: String
     
     weak var loadDelegate: ProfileLoaderProtocol?
     
     // MARK: - Initialization functions
     
-    init(profileName: String, repositories: [Repository]) {
+    init(profileName: String, repositories: [Project]) {
         self.projects = repositories
         self.profileName = profileName
     }

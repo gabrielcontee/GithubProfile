@@ -15,7 +15,6 @@ class SearchProfileViewController: UIViewController {
     @IBOutlet weak var profileSearchBar: UISearchBar!{
         didSet{
             profileSearchBar.searchTextField.textColor = .black
-            profileSearchBar.searchTextField.text = "gabrielcontee"
         }
     }
     
@@ -55,7 +54,7 @@ extension SearchProfileViewController: LoadableProtocol {
     func alreadyLoaded<T>(_ dataLoaded: T) {
         DispatchQueue.main.async {
             Spinner.stop()
-            if let name = self.profileSearchBar.text, let repos = dataLoaded as? [Repository] {
+            if let name = self.profileSearchBar.text, let repos = dataLoaded as? [Project] {
                 self.coordinator?.goToProfileDetails(profileName: name, repositories: repos)
             }
         }
