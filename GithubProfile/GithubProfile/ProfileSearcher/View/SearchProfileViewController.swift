@@ -20,8 +20,8 @@ class SearchProfileViewController: UIViewController {
     
     private let viewModel: SearchProfileViewModel
 
-    init(with viewModel: SearchProfileViewModel) {
-        self.viewModel = viewModel
+    init() {
+        self.viewModel = SearchProfileViewModel(apiClient: Requester())
         super.init(nibName: String(describing: Self.self), bundle: .main)
     }
     
