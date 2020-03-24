@@ -24,8 +24,7 @@ class MainCoordinator: Coordinator{
     
     func start() {
         setLightGrayNavBar()
-        let viewModel = SearchProfileViewModel(apiClient: Requester())
-        let searchProfileVC = SearchProfileViewController(with: viewModel)
+        let searchProfileVC = SearchProfileViewController()
         searchProfileVC.coordinator = self
         searchProfileVC.title = "GitHub Viewer"
         navigationController.pushViewController(searchProfileVC, animated: false)
